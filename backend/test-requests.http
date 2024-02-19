@@ -1,0 +1,79 @@
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfdXNlcklkIjoiMmJ3eHFaSWtMemVDUXRORSIsIm5hbWUiOiJuZy1sb2dpbi10ZXN0IiwidmFsdWUiOiIyNTAzNTU0M2UyZTFmMGEyMzg2OWI1YWJmMmVjOTk3ZDAwMDMxNTBlZTVmOTcwODRhZDA3OGY0NDViOGMiLCJleHBpcmVzIjoxNzA4MzU4NDA2NDM2LCJpYXQiOjE3MDgzNTc1MDYsImV4cCI6MTcwOTI1NzUwNn0.Rjxk8ePbYCCzIaDPrnYLyAUJ2U9m204MJh3JqrIubJk
+
+// basic data requests on basic data service
+GET http://localhost:9001/data HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfdXNlcklkIjoiMmJ3eHFaSWtMemVDUXRORSIsIm5hbWUiOiJuZy1sb2dpbi10ZXN0IiwidmFsdWUiOiIyNTAzNTU0M2UyZTFmMGEyMzg2OWI1YWJmMmVjOTk3ZDAwMDMxNTBlZTVmOTcwODRhZDA3OGY0NDViOGMiLCJleHBpcmVzIjoxNzA4MzU4NDA2NDM2LCJpYXQiOjE3MDgzNTc1MDYsImV4cCI6MTcwOTI1NzUwNn0.Rjxk8ePbYCCzIaDPrnYLyAUJ2U9m204MJh3JqrIubJk
+
+POST http://localhost:9001/data HTTP/1.1
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+
+{
+    "_id": "1337-id-preset",
+    "type": "PublicTransportConnection",
+    "from": "Prag",
+    "to": "Amsterdam"
+}
+
+
+// authentication endpoints
+POST http://localhost:9001/signup HTTP/1.1
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+
+{
+    "firstName": "Bob",
+    "lastName": "Kelso",
+    "email": "bob.kelso@test.com",
+    "password": "1234",
+    "confirmPassword": "1234"
+}
+
+POST http://localhost:9001/login HTTP/1.1
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+
+{
+    "email": "bob.kelso@test.com",
+    "password": "1234"
+}
+
+
+GET http://localhost:9001/logout HTTP/1.1
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+
+
+// requests for recipe application
+GET http://localhost:9001/recipes HTTP/1.1
+
+POST http://localhost:9001/recipes HTTP/1.1
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+
+[
+    {
+        "_id": "1337-cafe",
+        "type": "Recipe",
+        "name": "Spaghette",
+        "description": "The Spaghette of The Riot Games Code",
+        "imgPath": "./assets/not-found.jpg",
+        "ingredients": []
+    },
+    {
+        "_id": "420-face",
+        "type": "Recipe",
+        "name": "Quinoa Salad",
+        "description": "The gud stuff trust me",
+        "imgPath": "./assets/not-found.jpg",
+        "ingredients": []
+    }
+]
+
+@documentId = jvzSLlKKu53S8VNh
+
+DELETE http://localhost:9001/recipes/{{documentId}} HTTP/1.1
+Content-Type: application/json
+Access-Control-Allow-Origin: *
+

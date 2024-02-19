@@ -1,0 +1,10 @@
+<header>
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline control-buttons">
+            <button class="btn btn-outline-primary" type="button" [routerLink]="['signup']">Sign Up</button>
+            <button class="btn btn-outline-primary" type="button" [routerLink]="['login']">Log In</button>
+            <button class="btn btn-outline-primary" type="button" [routerLink]="['protected']">Protected</button>
+            <button class="btn btn-outline-primary" type="button" (click)="onLogout()" *ngIf="isAuthenticated">Logout</button>
+        </form>
+    </nav>
+</header>

@@ -1,0 +1,3 @@
+{"name":"Schnitzel","description":"Sehr lecker","imgPath":"./assets/food-dummy.jpg","ingredients":[{"name":"Pommes","amount":10},{"name":"Schnitzel","amount":1}],"_id":"PGTak2bj52ZIh4w1"}
+{"name":"Quinoa Eintopf","description":"Sehr gesund","imgPath":"./assets/quinoa-eintopf.jpg","ingredients":[{"name":"Quinoa","amount":200},{"name":"Tomatos","amount":3},{"name":"Planted Chicken","amount":3}],"_id":"bP6LpuxNs4x5afj1"}
+{"name":"Poke Bowl","description":"Eine Bowl mit leckeren Zutaten","imgPath":"./assets/poke-bowl.jpg","ingredients":[],"_id":"g0ERvd5I2OkGskIX"}
